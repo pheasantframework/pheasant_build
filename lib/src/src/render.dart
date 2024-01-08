@@ -4,6 +4,7 @@ import 'package:pheasant_temp/pheasant_build.dart';
 
 void renderElement(Element elementApp) {
   document.body?.children.add(elementApp);
+  querySelector('#output')?.children.add(elementApp);
 }
 
 // TODO: Create Support for JS files and scripts

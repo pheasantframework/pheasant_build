@@ -1,6 +1,6 @@
+// ignore: unused_import
 import 'package:pheasant_build/pheasant_build.dart';
 
 void main() {
-  var awesome = Awesome();
-  print('awesome: ${awesome.isAwesome}');
+  // There's not much going on here right now
 }

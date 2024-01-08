@@ -20,4 +20,4 @@ PheasantInput renderInput({String phsData = '<script></script><template></templa
   return PheasantInput(script: newSplit[0], template: newSplit[1], styles: newSplit[2]);
 }
 
-external PheasantInput renderInputArr({String phsData = '<script></script><template></template><style></style>'});
+// external PheasantInput renderInputArr({String phsData = '<script></script><template></template><style></style>'});

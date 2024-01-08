@@ -1,7 +1,8 @@
 name: pheasant_build
-description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+description: >-
+  The build package for all pheasant related compilation.
+version: 0.1.0-alpha
+repository: https://github.com/pheasantframework/pheasant_build
 
 environment:
   sdk: ^3.2.3
@@ -11,8 +12,9 @@ dependencies:
   build: ^2.4.1
   build_runner: ^2.4.7
   build_web_compilers: ^4.0.7
-  pheasant_temp: ^1.0.0
-  pheasant_meta: ^1.0.0
+  pheasant_temp: ^0.1.0-alpha
+  pheasant_meta: ^0.1.0-alpha
+  path: ^1.9.0
   # path: ^1.8.0
 
 dependency_overrides:
@@ -20,6 +22,8 @@ dependency_overrides:
     path: ../pheasant_temp
   pheasant_meta:
     path: ../pheasant_meta
+  pheasant_assets:
+    path: ../pheasant_assets
 
 dev_dependencies:
   lints: ^2.1.0
