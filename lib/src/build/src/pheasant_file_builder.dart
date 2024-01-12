@@ -17,16 +17,18 @@ class PheasantFileBuilder extends Builder {
 
     var data = await buildStep.readAsString(inpId);
 
+    var pathFromLib = dirname(inpId.path);
     var outId = inpId.changeExtension(fileExtension);
 
     PheasantComposedInput composedInput = renderInput(phsData: data);
     PheasantFile myIn = composedInput.input;
     
     final dartCode = renderFunc(
-      script: myIn.script, 
+      script: myIn.script,
       template: myIn.template, 
       componentName: "${filename}Component",
-      pheasantStyle: composedInput.style
+      pheasantStyle: composedInput.style,
+      appPath: pathFromLib
     );
 
     await buildStep.writeAsString(outId, dartCode);
