@@ -1,6 +1,6 @@
-import 'dart:async';
-import 'package:build/build.dart';
-import 'package:pheasant_temp/pheasant_temp.dart';
+import 'dart:async' show FutureOr;
+import 'package:build/build.dart' show AssetId, BuildStep, Builder;
+import 'package:pheasant_temp/pheasant_temp.dart' show renderMain;
 
 /// Builder Class used in building the `main.phs.dart` file, used as a bridge between the main entrypoint (`web/main.dart` for instance), and the compiled Pheasant Files (`App.phs.dart` for instance).
 class PheasantMainBuilder extends Builder {

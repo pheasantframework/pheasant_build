@@ -1,11 +1,11 @@
-import 'dart:async';
+import 'dart:async' show FutureOr;
 
-import 'package:build/build.dart';
-import 'package:path/path.dart';
-import 'package:pheasant_temp/pheasant_temp.dart';
+import 'package:build/build.dart' show BuildStep, Builder;
+import 'package:path/path.dart' show basenameWithoutExtension, dirname;
+import 'package:pheasant_temp/pheasant_temp.dart' show renderFunc;
 
 import '../../src/base.dart';
-import '../../tools/input.dart';
+import '../../tools/input.dart' hide PheasantInput;
 
 /// Builder Class used in building, processing and creating the dart-type Pheasant Files.
 /// 

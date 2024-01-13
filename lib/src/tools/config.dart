@@ -1,4 +1,4 @@
-import 'package:path/path.dart' as path;
+import 'package:path/path.dart' as path show normalize, relative;
 
 /// Class for Pheasant App Configuration
 /// 

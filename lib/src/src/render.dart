@@ -1,6 +1,6 @@
-import 'dart:html';
+import 'dart:html' show Element, querySelector;
 
-import 'package:pheasant_temp/pheasant_build.dart';
+import 'package:pheasant_temp/pheasant_build.dart' show PheasantTemplate;
 
 /// Function used to encapsulate the injection of the processed [PheasantTemplate] into the DOM
 /// 

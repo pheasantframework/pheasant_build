@@ -1,7 +1,7 @@
-import 'package:pheasant_assets/pheasant_build.dart';
-import 'package:pheasant_meta/pheasant_meta.dart';
+import 'package:pheasant_assets/pheasant_build.dart' hide PheasantStyleScoped, StyleScope;
+import 'package:pheasant_meta/pheasant_meta.dart' show Change;
 
-import '../tools/input.dart';
+import '../tools/input.dart' hide PheasantFile;
 
 /// Function used in rendering the input from a pheasant file.
 /// 

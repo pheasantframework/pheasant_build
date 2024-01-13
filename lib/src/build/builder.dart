@@ -1,5 +1,6 @@
-import 'package:build/build.dart';
-import 'package:pheasant_build/src/tools/config.dart';
+import 'package:build/build.dart' show Builder, BuilderOptions;
+
+import '../tools/config.dart' hide relativeFilePath;
 import 'src/pheasant_main_builder.dart';
 import 'src/pheasant_file_builder.dart';
 
