@@ -1,10 +1,24 @@
 import 'package:path/path.dart' as path;
 
+/// Class for Pheasant App Configuration
+/// 
+/// This class is used to encapsulate important configurations made when using the pheasant cli.
+/// 
+/// It gets the info essential during build from the `pheasant.yaml` or `pheasant.json` file, and parses it from the config to the build.
 class PheasantAppConfig {
+  /// The main entry point of the dart project in general (the `"main.dart"` file)
   String mainEntryPoint;
+
+  /// The entry point of the Pheasant Application (the `.phs` file to be rendered)
   String appEntryPoint;
+
+  /// The file extension being used here
   String extension;
+
+  /// The name of the Pheasant Application
   String? appName;
+
+  /// Whether sass/scss preprocessing is being enabled.
   bool sass;
 
   PheasantAppConfig({
@@ -14,6 +28,7 @@ class PheasantAppConfig {
     this.sass = false
   });
 
+  /// Constructor called when parsing info from the `build.yaml` file
   factory PheasantAppConfig.fromYamlMap(Map<String, dynamic> map) {
     return PheasantAppConfig(
       appEntryPoint: map['entry'] as String? ?? 'lib/App.phs',
@@ -26,8 +41,10 @@ class PheasantAppConfig {
   }
 }
 
+/// Simple type definition for Pheasant App Configurations
 typedef Config = PheasantAppConfig;
 
+/// Function to get the relative file path of a file from a directory in a Pheasant Project.
 String relativeFilePath(String filePath, String baseDirectory) {
   // Normalize the paths to handle platform-specific differences
   filePath = path.normalize(filePath);

@@ -7,7 +7,9 @@ import 'package:pheasant_temp/pheasant_temp.dart';
 import '../../src/base.dart';
 import '../../tools/input.dart';
 
-
+/// Builder Class used in building, processing and creating the dart-type Pheasant Files.
+/// 
+/// This class is used in compiling Pheasant Files to dart-html component files to inject into the DOM, through the use of [renderFunc].
 class PheasantFileBuilder extends Builder {
   String fileExtension;
 

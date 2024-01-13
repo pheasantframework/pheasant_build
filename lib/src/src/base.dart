@@ -3,9 +3,13 @@ import 'package:pheasant_meta/pheasant_meta.dart';
 
 import '../tools/input.dart';
 
+/// Function used in rendering the input from a pheasant file.
+/// 
+/// The function parses [phsData], which represents the string representation of the pheasant data, and then separates it into it's constituent segments.
+/// 
+/// Returns a [PheasantComposedInput], which encapsulates each item involved in the parsing of the pheasant file.
 @Change(
-  "function doesn't take order into account",
-  suggestedFunc: 'renderInputArr'
+  "function doesn't take order into account, and does not allow for optional components",
 )
 PheasantComposedInput renderInput({String phsData = '<script></script><template></template><style></style>'}) {
   List<String> initSplit = phsData.split('</script>');
@@ -24,5 +28,3 @@ PheasantComposedInput renderInput({String phsData = '<script></script><template>
     style: pheasantStyle
   );
 }
-
-// external PheasantInput renderInputArr({String phsData = '<script></script><template></template><style></style>'});
