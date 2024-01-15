@@ -42,7 +42,7 @@ class PheasantAppConfig {
 }
 
 /// Simple type definition for Pheasant App Configurations
-typedef Config = PheasantAppConfig;
+typedef AppConfig = PheasantAppConfig;
 
 /// Function to get the relative file path of a file from a directory in a Pheasant Project.
 String relativeFilePath(String filePath, String baseDirectory) {
