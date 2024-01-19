@@ -1,4 +1,4 @@
-# <center>The Pheasant Framework Metadata Package</center>
+# <center>The Pheasant Framework Build Package</center>
 
 ![Pub Version](https://img.shields.io/pub/v/pheasant_build?labelColor=rgb(245%2C%20193%2C%2066)&link=https%3A%2F%2Fpub.dev%2Fpackages%2Fpheasant_build)  ![Pub Publisher](https://img.shields.io/pub/publisher/pheasant_build?labelColor=rgb(245%2C%20193%2C%2066)&link=https%3A%2F%2Fpub.dev%2Fpackages%2Fpheasant_build)
 
