@@ -13,17 +13,14 @@ class PheasantMainBuilder extends Builder {
     this.fileExtension = '.phs.dart', 
     this.appName = 'AppComponent',
     this.mainEntry = 'App.phs',
-    this.entrypoint
+    this.entrypoint,
   });
 
   @override
   FutureOr<void> build(BuildStep buildStep) async {
     await buildStep.writeAsString(
       AssetId(buildStep.inputId.package, entrypoint ?? 'lib/main$fileExtension'),
-      '''
-// File generated with info - $mainEntry
-
-${renderMain(appName: appName, fileExtension: fileExtension, mainEntry: mainEntry)}'''
+      renderMain(appName: appName, fileExtension: fileExtension, mainEntry: mainEntry)
     );
   }
 
