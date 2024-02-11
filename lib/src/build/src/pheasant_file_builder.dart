@@ -12,11 +12,13 @@ import '../../tools/input.dart' hide PheasantInput;
 /// This class is used in compiling Pheasant Files to dart-html component files to inject into the DOM, through the use of [renderFunc].
 class PheasantFileBuilder extends Builder {
   String fileExtension;
+  bool js;
   bool sass;
 
   PheasantFileBuilder({
     this.fileExtension = '.phs.dart',
-    this.sass = false
+    this.sass = false,
+    this.js = false,
   });
   
   @override
@@ -37,7 +39,9 @@ class PheasantFileBuilder extends Builder {
       template: myIn.template,
       componentName: "${filename}Component",
       pheasantStyle: composedInput.style,
-      appDirPath: pathAtLib
+      appDirPath: pathAtLib,
+      js: js,
+      sass: sass
     );
 
     await buildStep.writeAsString(outId, dartCode);

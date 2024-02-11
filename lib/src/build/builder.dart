@@ -9,8 +9,8 @@ import 'src/pheasant_file_builder.dart';
 Builder pheasantFileBuilder(BuilderOptions builderOptions) {
   AppConfig config = PheasantAppConfig.fromYamlMap(builderOptions.config);
   return PheasantFileBuilder(
-    fileExtension: "${config.extension}.dart",
-    sass: config.sass
+    js: config.js,
+    sass: config.sass,
   );
 }
 
