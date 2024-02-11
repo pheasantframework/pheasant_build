@@ -21,18 +21,25 @@ class PheasantAppConfig {
   /// Whether sass/scss preprocessing is being enabled.
   bool sass;
 
+  /// Whether JavaScript has been enabled on this project.
+  bool js;
+
   PheasantAppConfig({
     this.mainEntryPoint = 'web/main.dart',
     this.appEntryPoint = 'lib/App.phs',
     this.extension = '.phs',
-    this.sass = false
+    this.sass = false,
+    this.js = false,
+    this.appName
   });
 
   /// Constructor called when parsing info from the `build.yaml` file
   factory PheasantAppConfig.fromYamlMap(Map<String, dynamic> map) {
     return PheasantAppConfig(
       appEntryPoint: map['entry'] as String? ?? 'lib/App.phs',
-      sass: map['sass'] as bool? ?? false
+      mainEntryPoint: map['web'] as String? ?? 'web/main.dart',
+      sass: map['sass'] as bool? ?? false,
+      js: map['js'] as bool? ?? false
     );
   }
 
