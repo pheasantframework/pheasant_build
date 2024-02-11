@@ -11,13 +11,16 @@ import '../tools/input.dart' hide PheasantFile;
 @Change(
   "function doesn't take order into account, and does not allow for optional components",
 )
-PheasantComposedInput renderInput({String phsData = '<script></script><template></template><style></style>'}) {
+PheasantComposedInput renderInput({
+  String phsData = '<script></script><template></template><style></style>',
+  bool sassEnabled = false
+}) {
   List<String> initSplit = phsData.split('</script>');
   List<String> newSplit = initSplit.last.split('</template>'); 
   newSplit.insert(0, initSplit.first);
   newSplit[0] = newSplit[0].replaceFirst('<script>', '');
   newSplit[1] = newSplit[1].replaceFirst('<template>', '');
-  PheasantStyle pheasantStyle = getStyleInput(newSplit[2]);
+  PheasantStyle pheasantStyle = getStyleInput(newSplit[2], sassEnabled: sassEnabled);
   newSplit[2] = newSplit[2].replaceFirst(PheasantStyle.styleRegex, '').replaceFirst('</style>', '');
 
   newSplit[1] = newSplit[1].replaceFirst('\n\n', '');

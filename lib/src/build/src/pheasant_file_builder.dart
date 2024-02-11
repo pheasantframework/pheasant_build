@@ -31,7 +31,7 @@ class PheasantFileBuilder extends Builder {
     final String pathAtLib = dirname(inpId.path);
     var outId = inpId.changeExtension(fileExtension);
 
-    PheasantComposedInput composedInput = renderInput(phsData: data);
+    PheasantComposedInput composedInput = renderInput(phsData: data, sassEnabled: sass);
     PheasantFile myIn = composedInput.input;
     
     final dartCode = renderFunc(
