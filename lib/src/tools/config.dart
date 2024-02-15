@@ -1,9 +1,9 @@
 import 'package:path/path.dart' as path show normalize, relative;
 
 /// Class for Pheasant App Configuration
-/// 
+///
 /// This class is used to encapsulate important configurations made when using the pheasant cli.
-/// 
+///
 /// It gets the info essential during build from the `pheasant.yaml` or `pheasant.json` file, and parses it from the config to the build.
 class PheasantAppConfig {
   /// The main entry point of the dart project in general (the `"main.dart"` file)
@@ -24,23 +24,21 @@ class PheasantAppConfig {
   /// Whether JavaScript has been enabled on this project.
   bool js;
 
-  PheasantAppConfig({
-    this.mainEntryPoint = 'web/main.dart',
-    this.appEntryPoint = 'lib/App.phs',
-    this.extension = '.phs',
-    this.sass = false,
-    this.js = false,
-    this.appName
-  });
+  PheasantAppConfig(
+      {this.mainEntryPoint = 'web/main.dart',
+      this.appEntryPoint = 'lib/App.phs',
+      this.extension = '.phs',
+      this.sass = false,
+      this.js = false,
+      this.appName});
 
   /// Constructor called when parsing info from the `build.yaml` file
   factory PheasantAppConfig.fromYamlMap(Map<String, dynamic> map) {
     return PheasantAppConfig(
-      appEntryPoint: map['entry'] as String? ?? 'lib/App.phs',
-      mainEntryPoint: map['web'] as String? ?? 'web/main.dart',
-      sass: map['sass'] as bool? ?? false,
-      js: map['js'] as bool? ?? false
-    );
+        appEntryPoint: map['entry'] as String? ?? 'lib/App.phs',
+        mainEntryPoint: map['web'] as String? ?? 'web/main.dart',
+        sass: map['sass'] as bool? ?? false,
+        js: map['js'] as bool? ?? false);
   }
 
   String get mainEntry {
