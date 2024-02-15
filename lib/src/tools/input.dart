@@ -1,6 +1,6 @@
 import 'package:pheasant_assets/pheasant_build.dart' show PheasantStyle;
 
-/// Base Class for a Pheasant File. 
+/// Base Class for a Pheasant File.
 abstract class PheasantFile {
   /// The data from the `script` component of the file
   String script;
@@ -11,12 +11,14 @@ abstract class PheasantFile {
   /// The data from the `style` component of the file
   String styles;
 
-  PheasantFile({required this.script, required this.template, required this.styles});
+  PheasantFile(
+      {required this.script, required this.template, required this.styles});
 }
 
 /// Class used to accept the main input of a pheasant file during build.
 class PheasantInput extends PheasantFile {
-  PheasantInput({required super.script, required super.template, required super.styles});
+  PheasantInput(
+      {required super.script, required super.template, required super.styles});
 }
 
 /// Class used to extend [PheasantInput] to encapsulate styles too, with the use of [PheasantStyle]
