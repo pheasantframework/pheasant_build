@@ -1,3 +1,6 @@
+## 0.1.0-tested
+- Added tests
+
 ## 0.1.0-dev
 - Added Configuration support for JavaScript and SASS
 
