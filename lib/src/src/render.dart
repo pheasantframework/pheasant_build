@@ -9,7 +9,7 @@ import 'package:pheasant_temp/pheasant_build.dart'
 /// Whenever a change is emitted, the application is rerendered in the DOM.
 ///
 /// If [appState] is not provided, then the state is generated in the beginning of the app lifecycle.
-void renderElement(PheasantTemplate app, {AppState? appState}) {
+void _renderElement(PheasantTemplate app, {AppState? appState}) {
   AppState state = appState ?? AppState(component: app);
   PheasantTemplate appObj = app;
   Element elementApp = appObj.render(appObj.template!, state);
@@ -28,5 +28,5 @@ void renderElement(PheasantTemplate app, {AppState? appState}) {
 /// The function accepts a pheasant file object - [PheasantTemplate] - and then processes the application.
 /// Once it is done, then it is injected into the DOM.
 void createApp(PheasantTemplate pheasantTemplate) {
-  renderElement(pheasantTemplate);
+  _renderElement(pheasantTemplate);
 }
