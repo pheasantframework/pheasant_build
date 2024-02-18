@@ -1,7 +1,7 @@
 import 'dart:html' show Element, querySelector;
 
 import 'package:pheasant_temp/pheasant_build.dart'
-    show PheasantTemplate, AppState;
+    show PheasantTemplate, AppState, ElementChangeWatcher;
 
 /// Function used to encapsulate the injection of the processed [PheasantTemplate] into the DOM
 ///
@@ -10,7 +10,7 @@ import 'package:pheasant_temp/pheasant_build.dart'
 ///
 /// If [appState] is not provided, then the state is generated in the beginning of the app lifecycle.
 void _renderElement(PheasantTemplate app, {AppState? appState}) {
-  AppState state = appState ?? AppState(component: app);
+  AppState state = appState ?? AppState(component: app, watchers: List.empty(growable: true));
   PheasantTemplate appObj = app;
   Element elementApp = appObj.render(appObj.template!, state);
   querySelector('#output')?.children.add(elementApp);
@@ -19,6 +19,7 @@ void _renderElement(PheasantTemplate app, {AppState? appState}) {
     (event) {
       elementApp = appObj.render(appObj.template!, state);
       querySelector('#output')?.children.first = elementApp;
+      state.watchers.whereType<ElementChangeWatcher>().forEach((element) => element.reflectChanges());
     },
   );
 }
