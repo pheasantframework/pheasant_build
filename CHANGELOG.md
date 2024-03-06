@@ -1,3 +1,6 @@
+## 0.1.0-dev.2
+- Made fix on parsing function to allow undefined but arranged tags.
+
 ## 0.1.0-dev.1
 - Made `renderElement` private
 - Added state support
