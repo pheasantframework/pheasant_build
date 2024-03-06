@@ -30,4 +30,9 @@ class PheasantComposedInput {
   final PheasantStyle style;
 
   PheasantComposedInput({required this.input, required this.style});
+
+  @override
+  String toString() {
+    return "Template: ${input.template} \nStyle: ${input.styles} \nScript: ${input.script}";
+  }
 }
