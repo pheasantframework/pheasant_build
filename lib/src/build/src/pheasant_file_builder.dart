@@ -8,7 +8,7 @@ import '../../src/base.dart';
 import '../../tools/input.dart' hide PheasantInput;
 
 /// Builder Class used in building, processing and creating the dart-type Pheasant Files.
-/// 
+///
 /// This class is used in compiling Pheasant Files to dart-html component files to inject into the DOM, through the use of [renderFunc].
 class PheasantFileBuilder extends Builder {
   String fileExtension;
@@ -20,7 +20,7 @@ class PheasantFileBuilder extends Builder {
     this.sass = false,
     this.js = false,
   });
-  
+
   @override
   FutureOr<void> build(BuildStep buildStep) async {
     var inpId = buildStep.inputId;
@@ -31,25 +31,24 @@ class PheasantFileBuilder extends Builder {
     final String pathAtLib = dirname(inpId.path);
     var outId = inpId.changeExtension(fileExtension);
 
-    PheasantComposedInput composedInput = renderInput(phsData: data, sassEnabled: sass);
+    PheasantComposedInput composedInput =
+        renderInput(phsData: data, sassEnabled: sass);
     PheasantFile myIn = composedInput.input;
-    
+
     final dartCode = renderFunc(
-      script: myIn.script,
-      template: myIn.template,
-      componentName: "${filename}Component",
-      pheasantStyle: composedInput.style,
-      appDirPath: pathAtLib,
-      js: js,
-      sass: sass
-    );
+        script: myIn.script,
+        template: myIn.template,
+        componentName: "${filename}Component",
+        pheasantStyle: composedInput.style,
+        appDirPath: pathAtLib,
+        js: js,
+        sass: sass);
 
     await buildStep.writeAsString(outId, dartCode);
   }
 
   @override
   Map<String, List<String>> get buildExtensions => {
-    '.phs': [fileExtension]
-  };
+        '.phs': [fileExtension]
+      };
 }
-

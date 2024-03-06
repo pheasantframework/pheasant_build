@@ -12,7 +12,7 @@ dependencies:
   build: ^2.4.1
   build_runner: ^2.4.7
   build_web_compilers: ^4.0.7
-  pheasant_temp: ^0.1.0-dev
+  pheasant_temp: ^0.1.0-dev.1
   pheasant_meta: ^0.1.0-beta.1
   pheasant_assets: ^0.1.0-beta
   path: ^1.9.0
